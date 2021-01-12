@@ -4,7 +4,7 @@
 Date: 2021-01-12 10:01:31
 Github: https://github.com/bellalee01
 LastEditors: lixuefei
-LastEditTime: 2021-01-12 10:16:33
+LastEditTime: 2021-01-12 10:22:49
 FilePath: /leetcode/1202DisjointSetUnion.py
 Description: 
 '''
@@ -39,6 +39,7 @@ class Solution:
         for i, ch in enumerate(s):
             mp[dsu.find(i)].append(ch)
 
+        #给每个list排序
         for vec in mp.values():
             vec.sort(reverse=True)
 
