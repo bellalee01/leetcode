@@ -4,7 +4,7 @@
 Date: 2021-01-13 09:53:08
 Github: https://github.com/bellalee01
 LastEditors: lixuefei
-LastEditTime: 2021-01-13 10:04:44
+LastEditTime: 2021-01-13 10:21:03
 FilePath: /leetcode/684.py
 Description: 冗余连接 并查集
              求联通分量的这种题都可以用并查集
@@ -33,6 +33,10 @@ class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
         djsu = DisJoinSetUnion(len(edges))
         for x,y in edges:
+            if djsu.find(x)==djsu.find(y):
+                return [x,y]
+            else:
+                djsu.union(x,y)
             
         
 
